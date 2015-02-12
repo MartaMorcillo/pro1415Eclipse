@@ -11,8 +11,9 @@ public class _15Notas {
 		String asignaturas[] = {"PRO","BDA","SI","LMI","ED"};
 		//mostrarPorAlumno(notas,alumnos,asignaturas);
 		//mostrarPorAsignatura(notas,alumnos,asignaturas);
-		mostrarMediaAlumnos(notas, alumnos);
-		mostrarMediaAsignatura(notas, asignaturas);
+		//mostrarMediaAlumnos(notas, alumnos);
+		//mostrarMediaAsignatura(notas, asignaturas);
+		System.out.println("Asignatura más fácil: " + asignaturas[asignaturaMasFacil(notas)]);
 	}
 	public static void mostrarPorAlumno(double n[][],String alu[],String asig[]){
 		System.out.println("Notas por alumno:");
@@ -54,5 +55,60 @@ public class _15Notas {
 			System.out.println("Asignatura " + asig[j] + ": " + (suma/n.length));
 			
 		}
+	}
+	/**
+	 * Devuelve la columna en que está la asignatura de mayor media
+	 *
+	 */
+	public static int asignaturaMasFacil (double n[][]){
+		double mediaMaxima = -1;
+		int asigMasFacil = -1;
+		for (int j = 0; j < n[0].length; j++) {
+			double suma = 0;
+			for (int i = 0; i < n.length; i++) {
+				suma += n[i][j];
+			}
+			double media = suma / n.length;
+			if(media>mediaMaxima){
+				mediaMaxima = media;
+				asigMasFacil = j;
+			}
+			
+		}
+		return asigMasFacil;
+	}
+	public static boolean alguienSuspendeTodo(double n[][]){
+		boolean enc = false;
+		//Busqueda por filas
+		for (int i = 0; i < n.length && !enc; i++) {
+			boolean algoAprobado = false;
+			for (int j = 0; j < n[i].length && !algoAprobado; j++) {
+				if(n[i][j]>=5) algoAprobado = true;
+			}
+			if(algoAprobado == false) enc = true;
+		}
+		return enc;
+	}
+	public static boolean alguienSuspendeTodo2(double n[][]){
+		
+		for (int i = 0; i < n.length;  i++) {
+			boolean algoAprobado = false;
+			for (int j = 0; j < n[i].length && !algoAprobado; j++) {
+				if(n[i][j]>=5) algoAprobado = true;
+			}
+			if(algoAprobado == false)return true;
+		}
+		return false;
+	}
+	public static boolean asignaturaSuspendidaPorTodos(double n[][]){
+		
+		for (int j = 0; j < n[0].length;  j++) {
+			boolean alguienAprueba = false;
+			for (int i = 0; i < n.length && !alguienAprueba; i++) {
+				if(n[i][j]>=5) alguienAprueba = true;
+			}
+			if(alguienAprueba == false) return true;
+		}
+		return false;
 	}
 }
