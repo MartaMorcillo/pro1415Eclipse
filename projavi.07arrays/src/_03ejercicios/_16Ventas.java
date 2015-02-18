@@ -62,12 +62,15 @@ public class _16Ventas {
             }
             double comision=0;
 
-            if(totalDistribuidor >7000 ) comision = 8;
-            else if(totalDistribuidor > 50000) comision = 5;
+            if(totalDistribuidor >70000 ) comision = 8;
+            else if(totalDistribuidor > 30000) comision = 5;
 
             if(comision > 0){
                 double importeComision =totalDistribuidor*comision/100;
-                System.out.println( "Vendedor: " + (i+1) + ". Total: "+ totalDistribuidor + " â‚¬. Porcentaje comision: " + comision + " %. Importe comision: " + importeComision + " â‚¬");
+                System.out.println( "Vendedor: " + (i+1) + 
+                		". Total: "+ totalDistribuidor + 
+                		" €. Porcentaje comision: " + comision +
+                		" %. Importe comision: " + importeComision + " €");
             }
         }
     }
