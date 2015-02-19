@@ -3,7 +3,7 @@ package _03ejercicios._02gestionhospital;
 public class Hospital {
 	private Paciente listaCamas[] ;
 	private int numLibres;
-	private final static int MAXC = 8;
+	private final static int MAXC = 8; 
 	
 	public Hospital(){
 		listaCamas = new Paciente[MAXC+1];
