@@ -29,5 +29,18 @@ public class _04Invertir {
         }
         return resultado;
     }
+    public void invertir2(int v[]){
+    	int i=0;
+    	int j= v.length-1;
+    	while(i<j){
+    		int aux = v[i];
+    		v[i] = v[j];
+    		v[j] = aux;
+    		
+    		i++;
+    		j--;
+       	}
+    	
+    }
 
 }
