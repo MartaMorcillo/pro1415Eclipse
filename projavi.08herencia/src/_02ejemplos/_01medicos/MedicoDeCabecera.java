@@ -17,4 +17,8 @@ public class MedicoDeCabecera extends Medico {
 		this.visitaLasCasas = visitaLasCasas;
 	}
 
+	public String toString(){
+		return super.toString() + " de cabecera";
+	}
+
 }

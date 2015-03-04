@@ -17,5 +17,10 @@ public class Medico {
 		this.trabajaEnHospital = trabajaEnHospital;
 	}
 	
+	@Override 
+	public String toString() {
+		return "Soy un MEDICO";
+	}
+	
 
 }

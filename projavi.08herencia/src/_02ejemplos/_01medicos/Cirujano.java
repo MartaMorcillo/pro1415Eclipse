@@ -10,5 +10,8 @@ public class Cirujano extends Medico {
 	public void hacerIncision(){
 		System.out.println("Como cirujano, voy a hacer una incision");
 	}
-
+	
+	public String toString(){
+		return "Soy un cirujano";
+	}
 }
