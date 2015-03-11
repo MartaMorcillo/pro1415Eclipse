@@ -52,10 +52,10 @@ public class Empleado {
 	public boolean equals(Object o){
 		if(this == o) return true;
 		if(!(o instanceof Empleado)) return false;
-		Empleado e = (Empleado)o;
+		//Empleado e = (Empleado)o;
 //		if(dni.equals(e.dni)) return true;
 //		else return false;
-		return dni.equals(e.dni);
+		return dni.equals(((Empleado)o).dni);
 	}
 	public int compareTo(Object o){
 		Empleado e = (Empleado)o;
