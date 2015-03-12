@@ -1,6 +1,6 @@
 package _02ejemplos._04animales;
 
-public class Gato extends Felino {
+public class Gato extends Felino implements AnimalDomestico{
 	
 	@Override
 	public void comer() {
@@ -12,9 +12,13 @@ public class Gato extends Felino {
 		System.out.println("Ruido de gato");
 		
 	}
-	
+	@Override
 	public void vacunar(){
 		System.out.println("Gato vacunado");
+	}
+	@Override
+	public void cortarPelo(){
+		System.out.println("Gato se corta el pelo");
 	}
 
 }
