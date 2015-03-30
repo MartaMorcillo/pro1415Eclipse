@@ -25,5 +25,11 @@ public class Circulo extends Figura{
 				"\nRadio: " + radio + 
 				"\n"+super.toString();
 	}
+	
+//	//Como el método compareTo es final en Figura, no se puede reescribir en círculo
+//	@Override
+//	public int compareTo(Object o){
+//		
+//	}
 		
 }
